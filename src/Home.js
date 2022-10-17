@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   makeStyles,
   AppBar,
@@ -17,31 +17,33 @@ import {
   Grid,
   Hidden,
   Switch,
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+} from "@material-ui/core";
+import { useTheme } from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 
-import Apps from '@material-ui/icons/Apps';
-import MoreVert from '@material-ui/icons/MoreVert';
-import VideoCall from '@material-ui/icons/VideoCall';
+import Apps from "@material-ui/icons/Apps";
+import MoreVert from "@material-ui/icons/MoreVert";
+import VideoCall from "@material-ui/icons/VideoCall";
 
-import HomeIcon from '@material-ui/icons/Home';
-import Subscriptions from '@material-ui/icons/Subscriptions';
-import Whatshot from '@material-ui/icons/Whatshot';
+import HomeIcon from "@material-ui/icons/Home";
+import Subscriptions from "@material-ui/icons/Subscriptions";
+import Whatshot from "@material-ui/icons/Whatshot";
 
-import VideoLibrary from '@material-ui/icons/VideoLibrary';
-import History from '@material-ui/icons/History';
+import VideoLibrary from "@material-ui/icons/VideoLibrary";
+import History from "@material-ui/icons/History";
 
-import AddCircle from '@material-ui/icons/AddCircle';
+import AddCircle from "@material-ui/icons/AddCircle";
+
+import { videos } from "./videos";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: '100vh',
+    height: "100vh",
     backgroundColor: theme.palette.background.dark,
   },
   appBar: {
-    boxShadow: 'none',
+    boxShadow: "none",
     zIndex: theme.zIndex.drawer + 1,
   },
   logo: {
@@ -53,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: 240,
-    borderRight: 'none',
+    borderRight: "none",
   },
   menuIcon: {
     paddingRight: theme.spacing(5),
@@ -73,91 +75,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: 4,
   },
   subheader: {
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
   },
 }));
-
-const videos = [
-  {
-    id: 1,
-    title:
-      'CYBERPUNK | Tudo oque você precisa saber.',
-    channel: 'Aylon Araújo',
-    views: '11 mi de visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb1.png',
-  },
-  {
-    id: 2,
-    title:
-      'AVENGERS - THE GAME | Dicas e Truques #02',
-    channel: 'Aylon Araújo',
-    views: '957 mil visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb2.png',
-  },
-  {
-    id: 3,
-    title:
-      'MULHER DE AMARELO CORRENDO | Você não vai acreditar o motivo que fez ela sair correndo',
-    channel: 'Aylon Araújo',
-    views: '106 mil visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb3.png',
-  },
-  {
-    id: 4,
-    title:
-      'A OVELHA NEGRA DA FAMÍLIA | Playboy problemático',
-    channel: 'Aylon Araújo',
-    views: '5,6 mi de visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb4.png',
-  },
-  {
-    id: 5,
-    title:
-      'Rick and "?" | Rick Sanchez demite Morty Smith',
-    channel: 'Aylon Araújo',
-    views: '2,2 mi de visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb5.png',
-  },
-  {
-    id: 6,
-    title: 'ANIQUILADOR DE YOUTUBERS | Floyd Mayweather marca luta com Luccas Neto',
-    channel: 'Aylon Araújo',
-    views: '233 mil visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb6.png',
-  },
-  {
-    id: 7,
-    title:
-      'TRAILER - POKEMON 2070 | Warner Bros. lança trailer do novo capítulo do longa.',
-    channel: 'Aylon Araújo',
-    views: '118 mil visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb7.png',
-  },
-  {
-    id: 8,
-    title:
-      'Surfistas & Furiosos | Vin Diesel é cotado como ator para papel',
-    channel: 'Aylon Araújo',
-    views: '1,9 mi de visualizações',
-    date: 'há 1 semana',
-    avatar: '/images/avatar.jpeg',
-    thumb: '/images/thumb8.png',
-  },
-];
 
 function Home({ darkMode, setDarkMode }) {
   const classes = useStyles();
@@ -165,22 +85,22 @@ function Home({ darkMode, setDarkMode }) {
 
   return (
     <div className={classes.root}>
-      <AppBar color='inherit' className={classes.appBar}>
+      <AppBar color="inherit" className={classes.appBar}>
         <Toolbar>
           <IconButton
-            edge='start'
+            edge="start"
             className={classes.menuIcon}
-            aria-label='menu'
+            aria-label="menu"
           >
             <MenuIcon />
           </IconButton>
           <img
             src={
-              theme.palette.type === 'dark'
-                ? '/images/branco.png'
-                : '/images/preto.png'
+              theme.palette.type === "dark"
+                ? "/images/branco.png"
+                : "/images/preto.png"
             }
-            alt='logo'
+            alt="logo"
             className={classes.logo}
           />
           <div className={classes.grow} />
@@ -200,18 +120,18 @@ function Home({ darkMode, setDarkMode }) {
           </IconButton>
           <Button
             startIcon={<AccountCircle />}
-            variant='outlined'
-            color='secondary'
+            variant="outlined"
+            color="secondary"
           >
             Fazer Login
           </Button>
         </Toolbar>
       </AppBar>
-      <Box display='flex'>
+      <Box display="flex">
         <Hidden mdDown>
           <Drawer
             className={classes.drawer}
-            variant='permanent'
+            variant="permanent"
             classes={{
               paper: classes.drawerPaper,
             }}
@@ -225,7 +145,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Início'}
+                    primary={"Início"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -234,7 +154,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Em alta'}
+                    primary={"Em alta"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -243,7 +163,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Inscrições'}
+                    primary={"Inscrições"}
                   />
                 </ListItem>
               </List>
@@ -257,7 +177,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Biblioteca'}
+                    primary={"Biblioteca"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -268,19 +188,19 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Histórico'}
+                    primary={"Histórico"}
                   />
                 </ListItem>
               </List>
               <Divider />
               <Box p={7}>
-                <Typography variant='body2'>
+                <Typography variant="body2">
                   Faça login para curtur vídeos, comentar e se inscrever.
                 </Typography>
                 <Box mt={2}>
                   <Button
-                    variant='outlined'
-                    color='secondary'
+                    variant="outlined"
+                    color="secondary"
                     startIcon={<AccountCircle />}
                   >
                     Fazer login
@@ -289,12 +209,12 @@ function Home({ darkMode, setDarkMode }) {
               </Box>
               <Divider />
               <List
-                component='nav'
-                aria-labelledby='nested-list-subheader'
+                component="nav"
+                aria-labelledby="nested-list-subheader"
                 subheader={
                   <ListSubheader
-                    component='div'
-                    id='nested-list-subheader'
+                    component="div"
+                    id="nested-list-subheader"
                     className={classes.subheader}
                   >
                     O Melhor do youtube
@@ -309,7 +229,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Música'}
+                    primary={"Música"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -320,7 +240,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Esportes'}
+                    primary={"Esportes"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -331,7 +251,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Jogos'}
+                    primary={"Jogos"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -342,7 +262,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Filmes'}
+                    primary={"Filmes"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -353,7 +273,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Notícias'}
+                    primary={"Notícias"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -364,7 +284,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Ao vivo'}
+                    primary={"Ao vivo"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -375,7 +295,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Destaques'}
+                    primary={"Destaques"}
                   />
                 </ListItem>
                 <ListItem button classes={{ root: classes.listItem }}>
@@ -386,7 +306,7 @@ function Home({ darkMode, setDarkMode }) {
                     classes={{
                       primary: classes.listItemText,
                     }}
-                    primary={'Videos 360'}
+                    primary={"Videos 360"}
                   />
                 </ListItem>
               </List>
@@ -399,7 +319,7 @@ function Home({ darkMode, setDarkMode }) {
                   classes={{
                     primary: classes.listItemText,
                   }}
-                  primary={'Procurar mais'}
+                  primary={"Procurar mais"}
                 />
               </ListItem>
               <Divider />
@@ -410,8 +330,8 @@ function Home({ darkMode, setDarkMode }) {
         <Box p={8}>
           <Toolbar />
           <Typography
-            variant='h5'
-            color='textPrimary'
+            variant="h5"
+            color="textPrimary"
             style={{ fontWeight: 600 }}
           >
             Recomendados
@@ -422,7 +342,7 @@ function Home({ darkMode, setDarkMode }) {
               <Grid item lg={3} md={4} sm={6} xs={12}>
                 <Box>
                   <img
-                    style={{ width: '100%' }}
+                    style={{ width: "100%" }}
                     alt={item.title}
                     src={item.thumb}
                   />
@@ -430,19 +350,19 @@ function Home({ darkMode, setDarkMode }) {
                     <Typography
                       style={{ fontWeight: 600 }}
                       gutterBottom
-                      variant='body1'
-                      color='textPrimary'
+                      variant="body1"
+                      color="textPrimary"
                     >
                       {item.title}
                     </Typography>
                     <Typography
-                      display='block'
-                      variant='body2'
-                      color='textSecondary'
+                      display="block"
+                      variant="body2"
+                      color="textSecondary"
                     >
                       {item.channel}
                     </Typography>
-                    <Typography variant='body2' color='textSecondary'>
+                    <Typography variant="body2" color="textSecondary">
                       {`${item.views} • ${item.date}`}
                     </Typography>
                   </Box>
